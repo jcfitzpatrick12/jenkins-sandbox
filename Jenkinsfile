@@ -5,6 +5,7 @@ pipeline {
             steps {
                 echo "Building..."
                 sh 'ls -lrt'
+                sh 'python3 main.py'
             }
         }
         stage('Test') {
