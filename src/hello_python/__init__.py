@@ -1,2 +1,4 @@
 def say_hello():
-    print("Hello, from Python!")
+    print("Hey, is this thing on? "
+          "Oh, right great, thanks. "
+          "Hello, from Python!")
