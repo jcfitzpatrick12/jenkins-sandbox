@@ -4,10 +4,12 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building..."
-                sh 'python3 venv ./venv \
-                    source ./venv/bin/activate \
-                    pip install . \
-                    say-hello'
+                sh """
+                    python3 venv ./venv && \
+                    source ./venv/bin/activate && \
+                    pip install . && \
+                    say-hello
+                    """
             }
         }
         stage('Test') {
