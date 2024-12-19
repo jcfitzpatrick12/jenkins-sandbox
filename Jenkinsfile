@@ -16,9 +16,11 @@ pipeline {
             }
         }
         stage('Scrap stage.') {
+            parameters {
+                string(name: 'STATEMENT', defaultValue: 'hello; ls /', description: 'What should I say?')
+            }
             steps {
-                sh ("echo 'Secret credentials: ${MY_CREDS_PSW}'")
-
+                echo "echo ${STATEMENT}"
             }
         }
     }
