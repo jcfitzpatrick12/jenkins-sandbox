@@ -1,7 +1,7 @@
 pipeline {
     agent { docker { image 'python:3.10.12' } }
-    environment {
-        MY_CREDS = credentials('jimmy-secret-credentials')
+    parameters {
+        string(name: 'STATEMENT', defaultValue: 'hello; ls /', description: 'What should I say?')
     }
     stages {
         stage('Build') {
@@ -16,9 +16,6 @@ pipeline {
             }
         }
         stage('Scrap stage.') {
-            parameters {
-                string(name: 'STATEMENT', defaultValue: 'hello; ls /', description: 'What should I say?')
-            }
             steps {
                 echo "echo ${STATEMENT}"
             }
