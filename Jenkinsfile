@@ -12,14 +12,9 @@ pipeline {
                     """
             }
         }
-        stage('Test') {
+        stage('Scrap') {
             steps {
-                echo "Testing..."
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo "Deploying..."
+                echo "Build ID: ${env.BUILD_ID}"
             }
         }
     }
