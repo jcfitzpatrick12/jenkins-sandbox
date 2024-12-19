@@ -1,8 +1,10 @@
 pipeline {
     agent { docker { image 'python:3.10.12' } }
-
     environment {
-        MY_ENV = "foo"
+        CC = """${sh(
+                returnStdout: true,
+                script: 'echo "clang"'
+                )}"""
     }
     stages {
         stage('Build') {
@@ -18,13 +20,7 @@ pipeline {
         }
         stage('Scrap stage.') {
             steps {
-                sh "printenv | grep foo"
-            }
-        }
-
-        stage('Another scrap stage.') {
-            steps {
-                sh "printenv | grep foo"
+                sh "printenv | grep CC"
             }
         }
     }
