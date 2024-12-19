@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Scrap stage.') {
             steps {
-                echo "echo ${STATEMENT}"
+                sh("echo ${STATEMENT}")
             }
         }
     }
