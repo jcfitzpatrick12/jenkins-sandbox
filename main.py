@@ -1,7 +1,3 @@
-# A dummy script
+from hello_python import say_hello
 
-def main():
-    print("I am a running Python program!")
-
-if __name__ == "__main__":
-    main()
+say_hello()

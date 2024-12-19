@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hello-python"
+version = "0.1.0"
+description = "A simple 'Hello, world!' type Python package."
+readme = "README.md"
+
+[project.scripts]
+say-hello = "hello_python:say_hello"
