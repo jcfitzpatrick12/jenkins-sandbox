@@ -26,8 +26,6 @@ pipeline {
                 sh "printenv | grep foo"
             }
         }
-
-        stage('')
     }
 }
 
