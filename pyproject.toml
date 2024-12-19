@@ -7,6 +7,7 @@ name = "hello-python"
 version = "0.1.0"
 description = "A simple 'Hello, world!' type Python package."
 readme = "README.md"
+requires-python = "==3.10.12"
 
 [project.scripts]
 say-hello = "hello_python:say_hello"
