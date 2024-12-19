@@ -12,11 +12,22 @@ pipeline {
                     """
             }
         }
-        stage('Scrap') {
+        stage('Scrap stage.') {
+            environment {
+                MY_ENV = "foo"
+            }
             steps {
-                echo "Build ID: ${env.BUILD_ID}"
+                sh "printenv | grep foo"
             }
         }
+
+        stage('Another scrap stage.') {
+            steps {
+                sh "printenv | grep foo"
+            }
+        }
+
+        stage('')
     }
 }
 
