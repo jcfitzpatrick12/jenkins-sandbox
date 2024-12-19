@@ -4,8 +4,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building..."
-                sh 'ls -lrt'
-                sh 'python3 main.py'
+                sh 'pip install .'
+                sh 'say-hello'
             }
         }
         stage('Test') {
