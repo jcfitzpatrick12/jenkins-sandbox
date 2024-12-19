@@ -1,5 +1,9 @@
 pipeline {
     agent { docker { image 'python:3.10.12' } }
+
+    environment {
+        MY_ENV = "foo"
+    }
     stages {
         stage('Build') {
             steps {
@@ -13,9 +17,6 @@ pipeline {
             }
         }
         stage('Scrap stage.') {
-            environment {
-                MY_ENV = "foo"
-            }
             steps {
                 sh "printenv | grep foo"
             }
