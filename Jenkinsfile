@@ -1,10 +1,7 @@
 pipeline {
     agent { docker { image 'python:3.10.12' } }
     environment {
-        CC = """${sh(
-                returnStdout: true,
-                script: 'echo "clang"'
-                )}"""
+        MY_CREDS = credentials('jimmy-secret-credentials')
     }
     stages {
         stage('Build') {
@@ -20,7 +17,9 @@ pipeline {
         }
         stage('Scrap stage.') {
             steps {
-                sh "printenv | grep CC"
+                sh """
+                   echo "Secret credentials: ${MY_CREDS}"
+                   """
             }
         }
     }
