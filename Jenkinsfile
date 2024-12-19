@@ -17,9 +17,8 @@ pipeline {
         }
         stage('Scrap stage.') {
             steps {
-                sh '''
-                   echo 'Secret credentials: ${MY_CREDS_PSW}'
-                   '''
+                sh ('echo "Secret credentials: ${MY_CREDS_PSW}"')
+
             }
         }
     }
